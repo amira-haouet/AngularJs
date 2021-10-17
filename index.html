@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>INSCRI </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <script src="Controller/app.js"></script>
+    <script src="Controller/modele.js"></script>
+
+    <script src="Controller/mainController.js"></script>
+    <script src="directives/etudiant.js"></script>
+
+</head>
+<body>
+  <section class="container" ng-controller="mainController">
+<div class="row">
+    <div class="col-md-6">
+          <form name="etudiantForm" class="form">
+<h2>Ajouter un nouvel etudiant</h2>
+<hr>
+<div class="form-group">
+<label for="nom"> Nom:</label>
+<input id="nom" type="text" class="input-sm form-control" ng-model="newEtudiant.nom">
+</div>
+<div class="form-group">
+    <label for="prenom"> prenom:</label>
+    <input id="prenom" type="text" class="form-control" ng-model="newEtudiant.prenom">
+    </div>
+<div class="form-group">
+<button class="btn btn-primary" type="submit" ng-click="addEtudiant(newEtudiant)">ADD</button>
+<button class="btn btn-primary" type="reset">Annuler</button>
+
+</div>
+
+
+          </form>
+
+</div>
+</div>
+<div class="col-md-6">
+    <h2>liste des Etudiants</h2>
+    <hr>
+    <article ng-repeat="etudiant in etudiants">
+      <etudiant />
+    
+    </article>  
+    </div>
+
+
+
+
+  </section>  
+</body>
+</html>
