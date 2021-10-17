@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  ng-app="app" >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Exercice </title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/angular.min.js"></script>
+    <script src="Controller/logService.js"></script>
+    <style type="text/css">
+
+div {
+    border: 1px solid black;
+    padding:30px;
+    margin: 100px;
+
+}
+
+    </style>
+    </head>
+<body ng-controller="logController" >
+<center><div >
+    <h1>Démo Log Service</h1>
+<br> 
+<label>Message:
+<input type="text" ng-model="message" placeholder="AngularJS" >
+</label><br>
+<br>
+<button ng-click="$log.log(message)"  class="btn btn-secondary">Log</button>
+<button ng-click="$log.warn(message)" class="btn btn-warning">Warn</button>
+<button ng-click="$log.info(message)" class="btn btn-primary">Info</button>
+<button ng-click="$log.debug(message)" class="btn btn-debug">Debug</button>
+<button ng-click="$log.error(message)"class="btn btn-danger">Error</button>
+
+</div></center>
+</body>
+</html>
